@@ -31,5 +31,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
   );
 }
