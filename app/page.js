@@ -1,9 +1,12 @@
+"use client";
+
 import About from "./components/about";
 import Subheading from "./components/subheading";
 import Herosection from "./components/herosection";
 import Knapp from "./components/knapp";
 import DownloadButton from "./components/downloadButton";
 import Image from "next/image";
+import InputComponent from "./components/InputComponent";
 
 {
   /* <Herosection />
@@ -51,20 +54,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[300px] w-full flex justify-center items-center flex-col bg-[#01353F]">
-        <div className="h-full w-[500px] flex justify-between items-center flex-col text-[#FDFEFE]">
-          <h1 className="text-5xl mt-6">Try it out for free!</h1>
-          <p className="text-lg text-[#FDFEFE] mt-5">
-            Type in your URL below to get a preview of how our tool can help you
-            optimize your accessibility:
-          </p>
-          <input
-            type="text"
-            placeholder="Type your URL here..."
-            className="border border-[#001F25 py-2 text-center rounded-full mb-9 w-72 italic"
-          ></input>
-        </div>
-      </div>
+      <InputComponent />
 
       <div className="flex justify-center align-center h-[700px]">
         <div className="flex justify-center align-center flex-col mx-[100px]">
