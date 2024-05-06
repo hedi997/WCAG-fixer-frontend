@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  color: #001f25;
+}
+
 .Knapp {
   display: flex;
   flex-direction: row;
