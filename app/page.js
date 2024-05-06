@@ -50,8 +50,9 @@ export default function Home() {
           </p>
         </div>
       </div>
+
       <div className="h-[300px] w-full flex justify-center items-center flex-col bg-[#01353F]">
-        <div className="h-[600px] w-[500px] flex justify-between items-center flex-col text-[#FDFEFE]">
+        <div className="h-full w-[500px] flex justify-between items-center flex-col text-[#FDFEFE]">
           <h1 className="text-5xl mt-6">Try it out for free!</h1>
           <p className="text-lg text-[#FDFEFE] mt-5">
             Type in your URL below to get a preview of how our tool can help you
