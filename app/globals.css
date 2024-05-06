@@ -4,6 +4,13 @@
 
 body {
   color: #001f25;
+  background: linear-gradient(
+    to bottom,
+    #d2e0e3 0%,
+    #d2e0e3 200px,
+    #f8fcfd 400px,
+    #f8fcfd 100%
+  );
 }
 
 .Knapp {

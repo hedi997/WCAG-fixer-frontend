@@ -5,28 +5,21 @@ import Knapp from "./components/knapp";
 import DownloadButton from "./components/downloadButton";
 import Image from "next/image";
 
-{
-  /* <Herosection />
-      <Subheading />
-      <About /> */
-}
-
 export default function Home() {
   return (
     <div>
       <div className="flex justify-between items-center flex-col h-[300px] w-full">
         <h1 className="text-7xl mt-8 text-[#012931]">EaseAccess</h1>
-        <DownloadButton
-          className="mt-10"
-          children={"Download"}
-        ></DownloadButton>
+        <button className="bg-[#012931] text-white rounded-xl hover:text-gray-500 uppercase font-bold py-3 px-7 w-[200px] h-[60px]">
+          Download
+        </button>
       </div>
       <div className="h-[500px] w-full flex justify-center items-center">
         <div>
           <Image
             className="mx-[100px]"
             src={"/images/glasses.jpeg"}
-            alt="glasses on laptop"
+            alt="image og a pair of glasses on a laptop"
             height="500"
             width="500"
           />
@@ -86,7 +79,7 @@ export default function Home() {
             <Image
               className="mr-5"
               src={"/images/glad-tjej.jpeg"}
-              alt="glasses on laptop"
+              alt="image of an happy girl"
               height="350"
               width="350"
             />
@@ -95,14 +88,14 @@ export default function Home() {
             <Image
               className="ml-3 my-3"
               src={"/images/utvecklare.jpeg"}
-              alt="glasses on laptop"
+              alt="image of a software developer"
               height="150"
               width="150"
             />
             <Image
               className="ml-3 my-3"
               src={"/images/laptop.png"}
-              alt="glasses on laptop"
+              alt="image of a laptop"
               height="150"
               width="150"
             />
