@@ -3,7 +3,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <div className="h-[200px] flex justify-between items-center">
-      <div className="flex justify-center items-center w-[200px] mx-[100px]">
+      <div className="flex justify-center items-center w-[200px] mx-[100px] text-[#001F25]">
         Copyright © 2024 Corporate name All Rights Reserved <br /> <br />
         Corporate name. Streetname 1410 City County 19801 Country
       </div>
@@ -13,7 +13,7 @@ function Footer() {
         <img src="./images/Läs mer/Frame 46.png" alt="Facebookslogo" />
       </div>
       <div className="w-[200px] mx-[100px]">
-        <h1 className="font-bold">LINKS</h1>
+        <h1 className="font-bold text-[#001F25]">LINKS</h1>
         <ul className="flex flex-row gap-8 text-[#001F25] my-5">
           <li>
             <Link
