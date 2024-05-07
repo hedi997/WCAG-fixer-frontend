@@ -6,6 +6,10 @@ body {
   color: #001f25;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 .Knapp {
   display: flex;
   flex-direction: row;

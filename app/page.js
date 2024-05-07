@@ -1,18 +1,8 @@
 "use client";
 
-import About from "./components/about";
-import Subheading from "./components/subheading";
-import Herosection from "./components/herosection";
-import Knapp from "./components/knapp";
 import DownloadButton from "./components/downloadButton";
 import Image from "next/image";
 import InputComponent from "./components/InputComponent";
-
-{
-  /* <Herosection />
-      <Subheading />
-      <About /> */
-}
 
 export default function Home() {
   return (
