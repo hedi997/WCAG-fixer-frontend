@@ -12,7 +12,6 @@ export default function RootLayout({ children }) {
           <NavLinks />
         </Nav>
         {children}
-        {/* <Knapp /> */}
         <Footer />
       </body>
     </html>
