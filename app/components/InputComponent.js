@@ -43,6 +43,12 @@ export default function InputComponent() {
             placeholder="Type your URL here..."
             className="border border-[#001F25 py-2 text-center rounded-full my-10 w-72 italic text-[#012931]"
             onChange={(e) => setUrl(e.target.value)}
+            onKeyDown={async (e) => {
+              if (e.key === "Enter") {
+                await handleScan();
+              }
+            }
+          }
             value={url}
           ></input>
           <button
