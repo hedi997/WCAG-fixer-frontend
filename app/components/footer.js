@@ -3,7 +3,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <div className="h-[200px] flex justify-between items-center">
-      <div className="flex justify-center items-center w-[200px] mx-[100px] text-[#001F25]">
+      <div className="flex justify-center items-center w-[250px] mx-[100px] text-[#001F25]">
         Copyright © 2024 Corporate name All Rights Reserved <br /> <br />
         Corporate name. Streetname 1410 City County 19801 Country
       </div>
