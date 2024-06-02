@@ -58,12 +58,12 @@ export default function InputComponent() {
                     </button>
                 </div>
                 {isLoading && (
-                    <div>
+                    <div className="animate-pulse">
                         <h1 className="text-white m-10">Loading...</h1>
                     </div>
                 )}
                 {showAnswer && (
-                    <div className="h-[400px] max-w-[700px] overflow-y-auto overflow-x-auto m-5 text-white flex"> {/* Flexbox layout tillagd */}
+                    <div className="max-h-[460px] max-w-[700px] overflow-y-auto  overflow-x-auto m-5 text-white flex transition-opacity duration-700 ease-in-out opacity-0 animate-fade-in"> {/* Flexbox layout tillagd */}
                         <div className="w-1/2 p-4"> {/* Kolumn styling tillagd */}
                             <h2 className="text-2xl font-bold">Violations</h2>
                             <ul className="list-disc ml-5"> {/* Lista styling tillagd */}
@@ -84,6 +84,7 @@ export default function InputComponent() {
                         </div>
                     </div>
                 )}
+
             </div>
         </>
     );
