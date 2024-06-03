@@ -4,7 +4,8 @@ import { useState } from "react";
 
 export default function InputComponent() {
     const [url, setUrl] = useState("");
-    const [answer, setAnswer] = useState("");
+    const [violations, setViolations] = useState("");
+    const [solutions, setSolutions] = useState("");
     const [showAnswer, setShowAnswer] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -23,7 +24,8 @@ export default function InputComponent() {
         })
             .then((response) => response.json())
             .then((data) => {
-                setAnswer(data.content);
+                setViolations(data.content.violations);
+                setSolutions(data.content.solutions);
                 setIsLoading(false);
                 setShowAnswer(true);
             });
@@ -57,34 +59,49 @@ export default function InputComponent() {
                         Scan website
                     </button>
                 </div>
-                {isLoading && (
-                    <div className="animate-pulse">
-                        <h1 className="text-white m-10">Loading...</h1>
+                {(isLoading || showAnswer) && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                        <div className="bg-[#01353F] p-10 rounded-md shadow-lg text-center relative max-w-[700px] w-full">
+                            {isLoading ? (
+                                <>
+                                    <h2 className="text-2xl font-bold text-white mb-4">ACCESSIBILITY CHECK</h2>
+                                    <p className="text-white mb-4">SCANNING IN PROCESS</p>
+                                    <div className="flex justify-center items-center mb-4">
+                                        <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-24 w-24"></div>
+                                    </div>
+                                    <p className="text-white">We're looking for violations and thinking about solutions...</p>
+                                </>
+                            ) : (
+                                <div className="text-white transition-opacity duration-700 ease-in-out">
+                                    <div className="w-full p-4 animate-fade-in"> {/* Kolumn styling och animation tillagd */}
+                                        <h2 className="text-2xl font-bold">Violations</h2>
+                                        <ul className="list-disc ml-5"> {/* Lista styling tillagd */}
+                                            {violations.split('\n').map((line, index) => {
+                                                if (line.startsWith('-')) return <li key={index}>{line.slice(2)}</li>; // Ta bort "-" från början av texten
+                                                return null;
+                                            })}
+                                        </ul>
+                                    </div>
+                                    <div className="w-full p-4 animate-fade-in"> {/* Kolumn styling och animation tillagd */}
+                                        <h2 className="text-2xl font-bold">Solutions</h2>
+                                        <ul className="list-disc ml-5"> {/* Lista styling tillagd */}
+                                            {solutions.split('\n').map((line, index) => {
+                                                if (line.startsWith('-')) return <li key={index}>{line.slice(2)}</li>; // Ta bort "-" från början av texten
+                                                return null;
+                                            })}
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
+                            <button
+                                className="absolute top-2 right-2 text-white bg-red-600 rounded-full h-10 w-10 flex items-center justify-center"
+                                onClick={() => { setIsLoading(false); setShowAnswer(false); }}
+                            >
+                                &times;
+                            </button>
+                        </div>
                     </div>
                 )}
-                {showAnswer && (
-                    <div className="max-h-[460px] max-w-[700px] overflow-y-auto  overflow-x-auto m-5 text-white flex transition-opacity duration-700 ease-in-out opacity-0 animate-fade-in"> {/* Flexbox layout tillagd */}
-                        <div className="w-1/2 p-4"> {/* Kolumn styling tillagd */}
-                            <h2 className="text-2xl font-bold">Violations</h2>
-                            <ul className="list-disc ml-5"> {/* Lista styling tillagd */}
-                                {answer.split('\n').map((line, index) => {
-                                    if (line.startsWith('-')) return <li key={index}>{line.slice(2)}</li>; // Ta bort "-" från början av texten
-                                    return null;
-                                })}
-                            </ul>
-                        </div>
-                        <div className="w-1/2 p-4"> {/* Kolumn styling tillagd */}
-                            <h2 className="text-2xl font-bold">Solutions</h2>
-                            <ul className="list-disc ml-5"> {/* Lista styling tillagd */}
-                                {answer.split('\n').map((line, index) => {
-                                    if (line.startsWith('-')) return <li key={index}>{line.slice(2)}</li>; // Ta bort "-" från början av texten
-                                    return null;
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-                )}
-
             </div>
         </>
     );
